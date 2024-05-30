@@ -1,0 +1,17 @@
+<div class=" p-5 align-items-center vh-100">
+
+  <div class="row-cols-1">
+    <div class="col">
+      <div class="d-flex justify-content-between">
+        <div>
+          <button class="btn btn-outline-secondary rounded-0" [routerLink]="['/manage/add']" *appRole="[rolesEnum.ADMIN]">Add/Edit Hero</button>
+        </div>
+        <app-heroes-list-filter (filterChange)="onFilterChange($event)" (sortChange)="onSortChange($event)"></app-heroes-list-filter>
+      </div>
+    </div>
+    <div class="col">
+      <app-heroes-list [heroesList]="filteredHeroesList"></app-heroes-list>
+    </div>
+  </div>
+
+</div>

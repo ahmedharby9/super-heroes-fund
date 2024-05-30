@@ -1,0 +1,7 @@
+<div id="container" [class.readOnly]="readonly">
+  <span [class.rated]="rating >= 5" class="bi bi-star" (click)="setRating(5)"></span>
+  <span [class.rated]="rating >= 4" class="bi bi-star" (click)="setRating(4)"></span>
+  <span [class.rated]="rating >= 3" class="bi bi-star" (click)="setRating(3)"></span>
+  <span [class.rated]="rating >= 2" class="bi bi-star" (click)="setRating(2)"></span>
+  <span [class.rated]="rating >= 1" class="bi bi-star" (click)="setRating(1)"></span>
+</div>
