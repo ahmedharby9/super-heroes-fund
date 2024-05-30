@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="card w-25 border-0 rounded-0 shadow ">
+    <div class="card-header bg-white">
+      <h4 class="card-title">Add/Edit Hero</h4>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="heroForm">
+        <div class="mb-3">
+          <label for="profile"><span class="text-danger">* </span> Hero Name:</label>
+          <div class="input-group">
+            <input
+              id="profile"
+              type="text"
+              class="form-control rounded-0"
+              formControlName="profile"
+              [ngbTypeahead]="search"
+              (focus)="focus$.next($any($event).target.value)"
+              (selectItem)="onSelect($event.item)"
+              [inputFormatter]="formatter"
+              [resultFormatter]="formatter"
+              [editable]="false"
+              #heroNameRef="ngbTypeahead"
+            />
+            <span class="input-group-text rounded-0">
+        <i class="bi bi-search"></i>
+      </span>
+          </div>
+          <div appValidationMessage [control]="heroForm.controls['profile']" class="text-danger"></div>
+        </div>
+
+        <div formArrayName="powers">
+          @for (power of powers.controls; track power; let i = $index, last = $last) {
+            <div [formGroupName]="i" class="mb-3">
+              <label for="power{{i}}"><span class="text-danger">* </span> Power:</label>
+              <div class="input-group">
+                <input type="text" formControlName="name" class="form-control rounded-0" id="name{{i}}">
+                @if (!last) {
+                  <span class="input-group-text rounded-0" (click)="removePower(i)">
+              <i class="bi bi-x"></i>
+            </span>
+                } @else {
+                  <span class="input-group-text rounded-0" (click)="addPower()">
+              <i class="bi bi-plus"></i>
+            </span>
+                }
+              </div>
+              <div appValidationMessage [control]="getControl(i)" class="text-danger"></div>
+
+            </div>
+          }
+        </div>
+        <div class="d-flex justify-content-end">
+          <button type="button" class="btn btn-secondary rounded-0" (click)="onSubmit()">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
