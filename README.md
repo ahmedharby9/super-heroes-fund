@@ -33,3 +33,8 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 4. Run `npm run server` to start the backend server.
 5. In a separate terminal window, run `ng serve` to start the front-end server.
 6. Open your web browser and navigate to `http://localhost:4200/` to view the application.
+7. access the application with the following credentials:
+   - username: `admin1`
+   - password: `admin1`
+8. Heroes should be displayed on the home page. and you can add a new hero by clicking the `Add Hero` button. and select the hero you want to edit or add from dropdown.
+9. Heroes can sign in and sign out of the application. and you can't add only heroes that are not signed out.
