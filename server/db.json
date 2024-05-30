@@ -1,0 +1,187 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "auth": "a:a",
+      "roleId": "1"
+    },
+    {
+      "id": "278c",
+      "username": "t",
+      "password": "11",
+      "roleId": "2",
+      "auth": "t:11"
+    },
+    {
+      "id": "59ee",
+      "username": "2",
+      "password": "2",
+      "roleId": "2",
+      "auth": "2:2"
+    },
+    {
+      "id": "1f9d",
+      "username": "3",
+      "password": "3",
+      "roleId": "2",
+      "auth": "3:3"
+    },
+    {
+      "id": "8dc2",
+      "username": "222222",
+      "password": "222222",
+      "roleId": "2",
+      "auth": "222222:222222"
+    }
+  ],
+  "roles": [
+    {
+      "id": "1",
+      "name": "admin"
+    },
+    {
+      "id": "2",
+      "name": "hero"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "0ca1",
+      "fullName": "test 5",
+      "age": 31,
+      "gender": 1,
+      "email": "assd@s.sds",
+      "phone": "121312312",
+      "city": null,
+      "address": null,
+      "summary": "123",
+      "userId": "278c",
+      "avatar": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "d7ee",
+      "fullName": "a1",
+      "age": 18,
+      "gender": 1,
+      "email": "tt@sd.wew",
+      "phone": "12333",
+      "city": null,
+      "address": null,
+      "summary": null,
+      "userId": "59ee",
+      "avatar": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "8f0c",
+      "fullName": "b2",
+      "age": 33,
+      "gender": 1,
+      "email": "fe@erer.er",
+      "phone": "3434",
+      "city": null,
+      "address": null,
+      "summary": null,
+      "userId": "1f9d",
+      "avatar": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "655c",
+      "fullName": "e",
+      "age": 22,
+      "gender": 1,
+      "email": null,
+      "phone": null,
+      "city": null,
+      "address": null,
+      "summary": null,
+      "userId": "8dc2",
+      "avatar": "https://via.placeholder.com/150"
+    }
+  ],
+  "heroes": [
+    {
+      "profileId": "8f0c",
+      "powers": [
+        {
+          "name": "1",
+          "rating": 5
+        },
+        {
+          "name": "3",
+          "rating": 1
+        },
+        {
+          "name": "4",
+          "rating": 5
+        }
+      ],
+      "id": "eba1",
+      "usersRated": [
+        "1"
+      ],
+      "totalRating": "3.7"
+    },
+    {
+      "profileId": "d7ee",
+      "powers": [
+        {
+          "name": "a",
+          "rating": 1
+        },
+        {
+          "name": "b",
+          "rating": 2
+        },
+        {
+          "name": "r",
+          "rating": 3
+        }
+      ],
+      "id": "8a78",
+      "usersRated": [
+        "1f9d"
+      ],
+      "totalRating": "2.0"
+    },
+    {
+      "profileId": "0ca1",
+      "powers": [
+        {
+          "name": "0",
+          "rating": 4
+        },
+        {
+          "name": "1",
+          "rating": 2
+        },
+        {
+          "name": "4",
+          "rating": 0
+        },
+        {
+          "name": "7",
+          "rating": 3
+        }
+      ],
+      "id": "2534",
+      "usersRated": [
+        "1"
+      ],
+      "totalRating": "2.3222"
+    },
+    {
+      "id": "67f5",
+      "profileId": "655c",
+      "powers": [
+        {
+          "name": "55",
+          "rating": 2
+        }
+      ],
+      "usersRated": [
+        "1"
+      ],
+      "totalRating": "2.0"
+    }
+  ]
+}
