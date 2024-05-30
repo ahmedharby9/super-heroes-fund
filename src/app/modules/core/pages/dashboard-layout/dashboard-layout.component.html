@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="row">
+    <nav class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+        <span class="fs-4">Management</span>
+      </a>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a routerLink="/" class="nav-link text-dark" aria-current="page">
+           <i class="bi bi-house-door-fill fs-5 text-secondary"></i>
+            Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/manage" class="nav-link text-dark" aria-current="page">
+           <i class="bi bi-people fs-5 text-secondary "></i>
+            Heroes
+          </a>
+        </li>
+
+      </ul>
+      <hr>
+      <a (click)="onLogout()" class="nav-link" aria-current="page" href="javascript:void(0);">
+        <i class="bi bi-box-arrow-right fs-5 text-secondary"></i>
+        Logout
+      </a>
+    </nav>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="bg-light rounded">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+  </div>
+</div>
+
