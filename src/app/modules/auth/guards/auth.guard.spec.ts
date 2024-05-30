@@ -31,7 +31,6 @@ describe('AuthGuard', () => {
 
   it('should not allow navigation when user is not authenticated', () => {
     authService.isAuthenticated.and.returnValue(false);
-
     const aGuard = TestBed.runInInjectionContext(() => authGuard(({} as ActivatedRouteSnapshot), ({} as RouterStateSnapshot)));
     expect(aGuard).toBeFalse();
     expect(toastrService.warning).toHaveBeenCalledWith('You must login to the system to access the page.!');

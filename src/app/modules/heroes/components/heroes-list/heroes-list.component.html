@@ -16,7 +16,7 @@
           <span class="d-flex justify-content-start ">
                  <app-star-rating [readonly]="true" [rating]="hero.totalRating"></app-star-rating>
             <small
-              class="mt-2 ms-2">( <b>{{ hero?.totalRating | number:'1.1-1' }}</b>  {{ hero?.usersRated?.length! ? '- ' + hero?.usersRated?.length! : 0 }}
+              class="mt-2 ms-2 d-md-inline d-none">( <b>{{ hero?.totalRating | number:'1.1-1' }}</b>  {{ hero?.usersRated?.length! ? '- ' + hero?.usersRated?.length! : 0 }}
               users )</small>
           </span>
 

@@ -1,8 +1,7 @@
 import {TestBed} from '@angular/core/testing';
-import {ActivatedRouteSnapshot, Router, RouterStateSnapshot} from '@angular/router';
+import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {rolesGuard} from './roles.guard';
-import {authGuard} from "./auth.guard";
 
 describe('rolesGuard', () => {
   let router: Router;
@@ -33,10 +32,8 @@ describe('rolesGuard', () => {
       data: {requiredRoles: ['admin']}
     };
     const stateMock: any = {};
-
     localStorage.removeItem('userInfo');
     TestBed.runInInjectionContext(() => rolesGuard(routeMock, stateMock));
-
     expect(toastr.warning).toHaveBeenCalledWith('You must login to the system to access the page.!');
     expect(router.navigate).toHaveBeenCalledWith(['/login']);
   });
