@@ -1,0 +1,23 @@
+<div class="d-flex align-items-center justify-content-around">
+  <div class="p-2">
+    <div class="input-group">
+         <span class="input-group-text rounded-0">
+        <i class="bi bi-search"></i>
+      </span>
+      <input type="text" id="filter" class="form-control rounded-0" placeholder="Search by name or power ..."
+             (input)="onFilterChange($any($event.target)!.value)" >
+
+    </div>
+  </div>
+  <div class="p-2">
+    <div class="d-flex justify-content-between">
+      <label class="form-check-label me-2" for="sortSwitch">Sort by Name</label>
+      <div class="form-check form-switch ">
+        <input class="form-check-input" type="checkbox" id="sortSwitch"
+               (change)="onSortChange($any($event.target)!.checked ? 'power' : 'name')">
+        <label class="form-check-label" for="sortSwitch">Sort by Power</label>
+    </div>
+
+    </div>
+  </div>
+</div>

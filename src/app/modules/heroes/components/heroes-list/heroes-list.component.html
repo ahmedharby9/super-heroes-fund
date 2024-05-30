@@ -1,0 +1,32 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Hero Name</th>
+    <th scope="col">Powers</th>
+    <th scope="col">Rate</th>
+  </tr>
+  </thead>
+  <tbody>
+    @for (hero of heroesList; track hero.id) {
+      <tr>
+        <td><a routerLink="/manage/profile/{{hero.id}}"
+               class="text-decoration-none btn-link">{{ hero.profile.fullName }}</a></td>
+        <td>{{ hero.powers | arrayToString:'name' }}</td>
+        <td>
+          <span class="d-flex justify-content-start ">
+                 <app-star-rating [readonly]="true" [rating]="hero.totalRating"></app-star-rating>
+            <small
+              class="mt-2 ms-2">( <b>{{ hero?.totalRating | number:'1.1-1' }}</b>  {{ hero?.usersRated?.length! ? '- ' + hero?.usersRated?.length! : 0 }}
+              users )</small>
+          </span>
+
+        </td>
+      </tr>
+    } @empty {
+      <tr>
+        <td colspan="3">No heroes found</td>
+      </tr>
+    }
+
+  </tbody>
+</table>

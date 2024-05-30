@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="card w-25 rounded-0 shadow border-0 ">
+    <div class="card-body">
+      <ng-container *ngIf="profileDetails?.profile as profile">
+        <img [ngSrc]="profile.avatar" class="mx-auto d-block rounded-circle border border-white my-2"
+             alt="Profile Image" width="150" height="150" loading="lazy">
+
+        <h5 class="card-title font-weight-bold text-center">{{ profile.fullName }}</h5>
+        <p class="card-text text-muted text-center">{{ profile.summary }}</p>
+        <div class="d-flex flex-row justify-content-around opacity-75">
+          <p class="border-1 border-dark border px-3 py-1 rounded-0 ">Age: {{ profile.age }}</p>
+          <p class="border-1 border-dark border px-3 py-1 rounded-0">Gender: <span class="bi fs-5"
+                                                                                   [appGenderIcon]="profile.gender"></span>
+          </p>
+        </div>
+        <p>Email: {{ profile.email }}</p>
+        <p>Phone: {{ profile.phone }}</p>
+        <p>Address: {{ profile.city }}, {{ profile.address }}</p>
+      </ng-container>
+    </div>
+    <div class="card-footer p-3 bg-white">
+      <div class="d-flex justify-content-between">
+        <h6 class="card-subtitle mb-3 text-muted">Powers</h6>
+        @if (profileDetails?.totalRating! > 0) {
+          <h6 class="card-subtitle mb-3 text-muted">Total: {{ profileDetails?.totalRating| number:'1.1-1'}}</h6>
+        }
+      </div>
+      <form [formGroup]="heroForm" (ngSubmit)="onSubmit()">
+        <div formArrayName="powers">
+          @for (power of profileDetails?.powers; track power; let i = $index) {
+            <div class="d-flex flex-row justify-content-between" [formGroupName]="i">
+              <span>{{ power.name }}</span>
+              <span><app-star-rating formControlName="rating" [rating]="power.rating"
+                                     [readonly]="isRatingDisabled"></app-star-rating></span>
+            </div>
+          } @empty {
+            <span class="badge bg-secondary m-1">No powers</span>
+          }
+        </div>
+        @if (!isRatingDisabled) {
+          <div class="d-flex justify-content-end mt-3">
+            <button type="submit" class="btn btn-outline-secondary rounded-0">Submit</button>
+          </div>
+        }
+      </form>
+    </div>
+  </div>
+</div>
