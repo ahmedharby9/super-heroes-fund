@@ -1,0 +1,21 @@
+<main class="d-flex justify-content-center">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <h1 class="h3 mb-3 fw-normal">Please login</h1>
+
+    <div class="mb-3">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" formControlName="username" class="form-control rounded-0"
+             placeholder="Username" required/>
+      <div appValidationMessage [control]="userForm.controls['username']" class="text-danger"></div>
+
+    </div>
+
+    <div class="mb-3">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" formControlName="password" class="form-control rounded-0"
+             placeholder="*****" required/>
+      <div appValidationMessage [control]="userForm.controls['password']" class="text-danger"></div>
+    </div>
+    <button type="submit" class="w-100 btn btn-lg btn-secondary rounded-0">Login</button>
+  </form>
+</main>

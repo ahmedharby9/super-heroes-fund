@@ -1,0 +1,30 @@
+
+@mixin form-control-validation {
+  input:required {
+    &:invalid {
+      border-color: #dc3545;
+
+      &:focus {
+        border-color: #dc3545;
+      }
+    }
+
+    &:valid {
+      border-color: #ced4da;
+
+      &:focus {
+        border-color: #ced4da;
+      }
+    }
+  }
+}
+
+.ng-submitted {
+  @include form-control-validation;
+}
+
+input:required.ng-touched {
+  @include form-control-validation;
+}
+
+
