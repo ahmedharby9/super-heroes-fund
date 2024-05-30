@@ -1,0 +1,39 @@
+@import "../../scss/base/colors";
+
+.form-control {
+  color: $gray-800;
+  background-color: $white;
+  border: 1px solid $gray-300;
+  border-radius: 0.357rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-select:focus,
+.form-control:focus {
+  box-shadow: none !important;
+  border: 1px solid #DEE2E6FF;
+}
+
+.input-group {
+  .btn {
+    padding: 1em;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-color: #dae1e7;
+  }
+}
+
+
+.ng-submitted {
+  .form-control {
+    &.ng-invalid.ng-dirty {
+      border-color: $danger !important;
+    }
+  }
+}
+
+.form-control {
+  &.ng-invalid.ng-dirty {
+    border-color: $danger;
+  }
+}
